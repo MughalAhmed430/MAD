@@ -1,9 +1,10 @@
 import 'dart:io';
 
 void main() {
+  // --- Name input ---
   stdout.write("Enter your name: ");
   String name = stdin.readLineSync()!;
-
+  
   int age;
   while (true) {
     stdout.write("Enter your age: ");
@@ -18,7 +19,6 @@ void main() {
       }
     }
   }
-
   if (age < 18) {
     print("Sorry $name, you are not eligible to register.");
     return;
@@ -43,7 +43,6 @@ void main() {
       }
     }
   }
-
   List<int> numbers = [];
   for (int i = 1; i <= n; i++) {
     while (true) {
