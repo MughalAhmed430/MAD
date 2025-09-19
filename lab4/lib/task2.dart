@@ -1,15 +1,26 @@
 import 'dart:io';
 
 void main() {
-  // --- Name input ---
-  stdout.write("Enter your name: ");
-  String name = stdin.readLineSync()!;
-  
+  String name;
+  while (true) {
+    stdout.write("Enter your name: ");
+    String? input = stdin.readLineSync();
+    if (input != null && input.trim().isNotEmpty) {
+      if (RegExp(r'^[a-zA-Z\s]+$').hasMatch(input)) {
+        name = input.trim();
+        break;
+      } else {
+        print("Name should only contain letters. Please try again.");
+      }
+    } else {
+      print("Name cannot be empty. Please enter your name.");
+    }
+  }
+
   int age;
   while (true) {
     stdout.write("Enter your age: ");
     String? input = stdin.readLineSync();
-
     if (input != null) {
       try {
         age = int.parse(input);
@@ -19,6 +30,7 @@ void main() {
       }
     }
   }
+
   if (age < 18) {
     print("Sorry $name, you are not eligible to register.");
     return;
@@ -29,7 +41,6 @@ void main() {
   while (true) {
     stdout.write("How many numbers do you want to enter? ");
     String? input = stdin.readLineSync();
-
     if (input != null) {
       try {
         n = int.parse(input);
@@ -43,12 +54,12 @@ void main() {
       }
     }
   }
+
   List<int> numbers = [];
   for (int i = 1; i <= n; i++) {
     while (true) {
       stdout.write("Enter number $i: ");
       String? input = stdin.readLineSync();
-
       if (input != null) {
         try {
           int value = int.parse(input);
@@ -63,7 +74,6 @@ void main() {
 
   int evenSum = 0;
   int oddSum = 0;
-
   for (int num in numbers) {
     if (num % 2 == 0) {
       evenSum += num;
@@ -75,7 +85,7 @@ void main() {
   int largest = numbers.reduce((a, b) => a > b ? a : b);
   int smallest = numbers.reduce((a, b) => a < b ? a : b);
 
-  print("\n=== Results ===");
+  print("\nResults");
   print("Numbers entered: $numbers");
   print("Sum of even numbers: $evenSum");
   print("Sum of odd numbers: $oddSum");
