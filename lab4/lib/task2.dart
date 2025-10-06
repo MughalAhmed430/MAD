@@ -10,7 +10,7 @@ void main() {
         name = input.trim();
         break;
       } else {
-        print("Name should only contain letters. Please try again.");
+        print("Name should only contain Alphabets letters. Please try again.");
       }
     } else {
       print("Name cannot be empty. Please enter your name.");
