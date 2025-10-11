@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "660003224839",
+    "project_id": "campus-events-planner",
+    "storage_bucket": "campus-events-planner.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660003224839:android:84dae5de77fff3ab2c99a2",
+        "android_client_info": {
+          "package_name": "com.campusplanner.anees"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM8umaRVlKB8sVCySLK5lAAGcl7SDdi10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
