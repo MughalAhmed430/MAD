@@ -1,0 +1,38 @@
+name: assignment2
+description: "Travel Guide App - Assignment #2 (Flutter Project)"
+publish_to: 'none' # Prevent publishing to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Optional UI/UX enhancement packages
+  google_fonts: ^6.2.1        # For custom font styling
+  shared_preferences: ^2.3.3  # For saving user favorites (optional)
+  url_launcher: ^6.3.0        # For opening map or web links (optional)
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  # Uncomment and add custom fonts here if needed later
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
