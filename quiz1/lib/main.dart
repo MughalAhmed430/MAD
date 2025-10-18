@@ -54,8 +54,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _errorText = null;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-            Text('✅ Username saved as: ${_usernameController.text.trim()}'),
+            content: Text(
+                '✅ Username saved as: ${_usernameController.text.trim()}'),
           ),
         );
       }
@@ -101,13 +101,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     // Profile Picture
                     Center(
-                      child: CircleAvatar(
-                        radius: 55,
-                        backgroundColor: Colors.teal.shade400,
-                        child: const Icon(
-                          Icons.person,
-                          size: 60,
-                          color: Colors.white,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 8,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        child: const CircleAvatar(
+                          radius: 55,
+                          backgroundImage: AssetImage('assets/profile.jpg'),
+                          backgroundColor: Colors.transparent,
                         ),
                       ),
                     ),
@@ -154,6 +162,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
+                            elevation: 3,
                           ),
                           child: const Text(
                             'Save',
@@ -190,7 +199,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: const Text(
                         "Hello! I'm Anees Ahmed — a Flutter beginner exploring widgets, layouts, and UI design. "
-                            "This app is my Profile Screen assignment, showing how to use Scaffold, SafeArea, Column, Buttons, TextField, and MediaQuery in a clean layout.",
+                            "This app demonstrates the use of Scaffold, SafeArea, Column, Buttons, TextField, and MediaQuery, "
+                            "organized in a clean and responsive layout.",
                         style: TextStyle(
                           color: Colors.black87,
                           height: 1.4,
@@ -213,8 +223,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                          BorderSide(color: Colors.teal.shade700, width: 2),
+                          borderSide: BorderSide(
+                              color: Colors.teal.shade700, width: 2),
                         ),
                       ),
                     ),
@@ -224,7 +234,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
 
-            // Orientation Display (Always at Bottom)
+            // Orientation Display (Bottom Section)
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16),
