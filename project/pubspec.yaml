@@ -18,19 +18,20 @@ dependencies:
   cloud_firestore: ^5.6.12
   firebase_storage: ^12.1.0
   firebase_messaging: ^15.1.0
+
+  # Animation & UI Enhancements
   animate_do: ^3.3.4
-
-  # State management
-  provider: ^6.1.2
-
-  # UI & UX Enhancements
-  cupertino_icons: ^1.0.8
+  flutter_staggered_animations: ^1.1.1
   google_fonts: ^6.2.0
   fluttertoast: ^8.2.4
   lottie: ^3.1.0
+  cupertino_icons: ^1.0.8
 
-  # Optional (for future extensions)
-  # google_maps_flutter: ^2.7.0   # Only if you later add event location maps
+  # State Management
+  provider: ^6.1.2
+
+  # Optional (for future use)
+  # google_maps_flutter: ^2.7.0
 
 dev_dependencies:
   flutter_test:
@@ -40,10 +41,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Uncomment and use these later if you add images or fonts
+  # Assets and Fonts (optional — uncomment if needed)
   # assets:
   #   - assets/images/
-  #
+
   # fonts:
   #   - family: Poppins
   #     fonts:
