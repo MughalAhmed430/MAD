@@ -56,100 +56,104 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedContainer(
-        duration: const Duration(seconds: 3),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black, Color(0xFF0f2027), Color(0xFF2c5364)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+      body: SafeArea( // ✅ Added SafeArea here
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 3),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.black, Color(0xFF0f2027), Color(0xFF2c5364)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-        ),
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: Center(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 400),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Welcome Back 👋",
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(color: Colors.blueAccent, blurRadius: 20)
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 40),
-                    _glassInputField(
-                      controller: emailController,
-                      hint: 'Email',
-                      icon: Icons.email_outlined,
-                    ),
-                    const SizedBox(height: 20),
-                    _glassInputField(
-                      controller: passwordController,
-                      hint: 'Password',
-                      icon: Icons.lock_outline,
-                      obscure: isObscured,
-                      suffix: IconButton(
-                        icon: Icon(
-                          isObscured ? Icons.visibility : Icons.visibility_off,
-                          color: Colors.white54,
-                        ),
-                        onPressed: () => setState(() {
-                          isObscured = !isObscured;
-                        }),
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    GestureDetector(
-                      onTap: loading ? null : loginUser,
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 80, vertical: 15),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF00C6FF), Color(0xFF0072FF)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Colors.blueAccent, blurRadius: 20)
+          child: FadeTransition(
+            opacity: _fadeAnimation,
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 400),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Welcome Back 👋",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(color: Colors.blueAccent, blurRadius: 20)
                           ],
                         ),
-                        child: loading
-                            ? const CircularProgressIndicator(
-                            color: Colors.white)
-                            : const Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                      ),
+                      const SizedBox(height: 40),
+                      _glassInputField(
+                        controller: emailController,
+                        hint: 'Email',
+                        icon: Icons.email_outlined,
+                      ),
+                      const SizedBox(height: 20),
+                      _glassInputField(
+                        controller: passwordController,
+                        hint: 'Password',
+                        icon: Icons.lock_outline,
+                        obscure: isObscured,
+                        suffix: IconButton(
+                          icon: Icon(
+                            isObscured
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.white54,
+                          ),
+                          onPressed: () =>
+                              setState(() => isObscured = !isObscured),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 20),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(_createRoute());
-                      },
-                      child: const Text(
-                        "Don't have an account? Sign Up",
-                        style: TextStyle(color: Colors.white70),
+                      const SizedBox(height: 30),
+                      GestureDetector(
+                        onTap: loading ? null : loginUser,
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 80, vertical: 15),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF00C6FF), Color(0xFF0072FF)],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.blueAccent, blurRadius: 20)
+                            ],
+                          ),
+                          child: loading
+                              ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                              : const Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 20),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(_createRoute());
+                        },
+                        child: const Text(
+                          "Don't have an account? Sign Up",
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -200,8 +204,8 @@ class _LoginScreenState extends State<LoginScreen>
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
-        final tween =
-        Tween(begin: begin, end: end).chain(CurveTween(curve: Curves.ease));
+        final tween = Tween(begin: begin, end: end)
+            .chain(CurveTween(curve: Curves.ease));
         return SlideTransition(position: animation.drive(tween), child: child);
       },
     );

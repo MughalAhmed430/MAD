@@ -31,12 +31,12 @@ class CampusEventPlannerApp extends StatelessWidget {
         brightness: Brightness.dark,
         useMaterial3: true,
       ),
-      themeMode: ThemeMode.system, // 👈 automatic light/dark theme
+      themeMode: ThemeMode.system, //  automatic light/dark theme
       initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
-        '/home': (context) => const HomeScreen(), // 👈 connected
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
