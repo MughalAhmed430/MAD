@@ -48,7 +48,7 @@ class _SignupScreenState extends State<SignupScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea( // ✅ Added SafeArea
+      body: SafeArea(
         child: AnimatedContainer(
           duration: const Duration(seconds: 3),
           decoration: const BoxDecoration(

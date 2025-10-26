@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea( // ✅ Added SafeArea here
+      body: SafeArea(
         child: AnimatedContainer(
           duration: const Duration(seconds: 3),
           decoration: const BoxDecoration(
