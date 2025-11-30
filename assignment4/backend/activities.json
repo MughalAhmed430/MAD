@@ -1,0 +1,38 @@
+[
+  {
+    "id": "f3cff1ab-48d8-4c7f-a39c-9cdb9da6f278",
+    "title": "Job done",
+    "description": "passes",
+    "latitude": 32.9113126,
+    "longitude": 72.7545957,
+    "userId": "user_123",
+    "imageUrl": null,
+    "timestamp": "2025-11-30T17:39:06.467Z",
+    "createdAt": "2025-11-30T17:39:06.467Z",
+    "updatedAt": "2025-11-30T17:39:06.467Z"
+  },
+  {
+    "id": "f7e74f15-cccb-43ec-8aa5-53cd37e4e184",
+    "title": "Tea break ",
+    "description": "final testing ",
+    "latitude": 32.9113175,
+    "longitude": 72.7546045,
+    "userId": "user_123",
+    "imageUrl": null,
+    "timestamp": "2025-11-30T17:40:27.342Z",
+    "createdAt": "2025-11-30T17:40:27.342Z",
+    "updatedAt": "2025-11-30T17:40:27.342Z"
+  },
+  {
+    "id": "d52ed43a-c8c7-45be-adaf-19010238155b",
+    "title": "Evening Walk ",
+    "description": "I am testing my api",
+    "latitude": 32.911311,
+    "longitude": 72.7545934,
+    "userId": "user_123",
+    "imageUrl": null,
+    "timestamp": "2025-11-30T17:43:51.201Z",
+    "createdAt": "2025-11-30T17:43:51.201Z",
+    "updatedAt": "2025-11-30T17:43:51.201Z"
+  }
+]
